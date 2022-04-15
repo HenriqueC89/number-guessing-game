@@ -1,0 +1,22 @@
+.title {
+  font-size: 36px;
+  font-family: var(--type-second);
+  color: var(--color-orange);
+  text-align: center;
+}
+
+.separator {
+  width: 255px;
+  border: 0;
+  border-top: 1px solid var(--color-grey-light);
+}
+
+@media (max-width: 1024px) {
+  .separator {
+    width: 205px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}

@@ -1,4 +1,8 @@
-.segment > path {
+.digit {
+  margin: 10px;
+}
+
+.digit > path {
   fill: var(--color-grey-light);
 }
 
@@ -10,8 +14,8 @@
 .one.error > path:nth-child(6) {
   fill: var(--color-error);
 }
-.one.success > path:nth-child(3),
-.one.success > path:nth-child(6) {
+.one.victory > path:nth-child(3),
+.one.victory > path:nth-child(6) {
   fill: var(--color-success);
 }
 
@@ -29,11 +33,11 @@
 .two.error > path:nth-child(7) {
   fill: var(--color-error);
 }
-.two.success > path:nth-child(1),
-.two.success > path:nth-child(3),
-.two.success > path:nth-child(4),
-.two.success > path:nth-child(5),
-.two.success > path:nth-child(7) {
+.two.victory > path:nth-child(1),
+.two.victory > path:nth-child(3),
+.two.victory > path:nth-child(4),
+.two.victory > path:nth-child(5),
+.two.victory > path:nth-child(7) {
   fill: var(--color-success);
 }
 
@@ -51,11 +55,11 @@
 .three.error > path:nth-child(7) {
   fill: var(--color-error);
 }
-.three.success > path:nth-child(1),
-.three.success > path:nth-child(3),
-.three.success > path:nth-child(4),
-.three.success > path:nth-child(6),
-.three.success > path:nth-child(7) {
+.three.victory > path:nth-child(1),
+.three.victory > path:nth-child(3),
+.three.victory > path:nth-child(4),
+.three.victory > path:nth-child(6),
+.three.victory > path:nth-child(7) {
   fill: var(--color-success);
 }
 
@@ -71,10 +75,10 @@
 .four.error > path:nth-child(7) {
   fill: var(--color-error);
 }
-.four.success > path:nth-child(2),
-.four.success > path:nth-child(3),
-.four.success > path:nth-child(6),
-.four.success > path:nth-child(7) {
+.four.victory > path:nth-child(2),
+.four.victory > path:nth-child(3),
+.four.victory > path:nth-child(6),
+.four.victory > path:nth-child(7) {
   fill: var(--color-success);
 }
 
@@ -92,11 +96,11 @@
 .five.error > path:nth-child(7) {
   fill: var(--color-error);
 }
-.five.success > path:nth-child(1),
-.five.success > path:nth-child(2),
-.five.success > path:nth-child(4),
-.five.success > path:nth-child(6),
-.five.success > path:nth-child(7) {
+.five.victory > path:nth-child(1),
+.five.victory > path:nth-child(2),
+.five.victory > path:nth-child(4),
+.five.victory > path:nth-child(6),
+.five.victory > path:nth-child(7) {
   fill: var(--color-success);
 }
 
@@ -116,12 +120,12 @@
 .six.error > path:nth-child(7) {
   fill: var(--color-error);
 }
-.six.success > path:nth-child(1),
-.six.success > path:nth-child(2),
-.six.success > path:nth-child(4),
-.six.success > path:nth-child(5),
-.six.success > path:nth-child(6),
-.six.success > path:nth-child(7) {
+.six.victory > path:nth-child(1),
+.six.victory > path:nth-child(2),
+.six.victory > path:nth-child(4),
+.six.victory > path:nth-child(5),
+.six.victory > path:nth-child(6),
+.six.victory > path:nth-child(7) {
   fill: var(--color-success);
 }
 
@@ -135,9 +139,9 @@
 .seven.error > path:nth-child(6) {
   fill: var(--color-error);
 }
-.seven.success > path:nth-child(1),
-.seven.success > path:nth-child(3),
-.seven.success > path:nth-child(6) {
+.seven.victory > path:nth-child(1),
+.seven.victory > path:nth-child(3),
+.seven.victory > path:nth-child(6) {
   fill: var(--color-success);
 }
 
@@ -147,7 +151,7 @@
 .eight.error > path {
   fill: var(--color-error);
 }
-.eight.success > path {
+.eight.victory > path {
   fill: var(--color-success);
 }
 
@@ -167,11 +171,36 @@
 .nine.error > path:nth-child(7) {
   fill: var(--color-error);
 }
-.nine.success > path:nth-child(1),
-.nine.success > path:nth-child(2),
-.nine.success > path:nth-child(3),
-.nine.success > path:nth-child(4),
-.nine.success > path:nth-child(6),
-.nine.success > path:nth-child(7) {
+.nine.victory > path:nth-child(1),
+.nine.victory > path:nth-child(2),
+.nine.victory > path:nth-child(3),
+.nine.victory > path:nth-child(4),
+.nine.victory > path:nth-child(6),
+.nine.victory > path:nth-child(7) {
+  fill: var(--color-success);
+}
+
+.zero.default > path:nth-child(1),
+.zero.default > path:nth-child(2),
+.zero.default > path:nth-child(3),
+.zero.default > path:nth-child(4),
+.zero.default > path:nth-child(6),
+.zero.default > path:nth-child(5) {
+  fill: var(--color-blue-darkest);
+}
+.zero.error > path:nth-child(1),
+.zero.error > path:nth-child(2),
+.zero.error > path:nth-child(3),
+.zero.error > path:nth-child(4),
+.zero.error > path:nth-child(6),
+.zero.error > path:nth-child(5) {
+  fill: var(--color-error);
+}
+.zero.victory > path:nth-child(1),
+.zero.victory > path:nth-child(2),
+.zero.victory > path:nth-child(3),
+.zero.victory > path:nth-child(4),
+.zero.victory > path:nth-child(6),
+.zero.victory > path:nth-child(5) {
   fill: var(--color-success);
 }

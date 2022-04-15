@@ -1,14 +1,33 @@
-import React from "react";
-import styles from "./Number.module.css";
-
-export const Number = () => {
-  /*
-    A
-  B   F
-    G  
-  C   E
-    D
+import React, { useEffect, useState } from "react";
+import styles from "./Digit.module.css";
+const numberInWords = [
+  "zero",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+];
+/*
+  A
+B   F
+  G  
+C   E
+  D
 */
+
+/* 
+  digit 0-9
+  gameStatus default, error, victory
+*/
+export const Digit = ({ digit, gameStatus }) => {
+  const [numberToShow, setNumberToShow] = useState(null);
+  useEffect(() => {}, []);
+  let hide = true ? styles[numberInWords[digit]] : null;
   return (
     <>
       <svg
@@ -17,7 +36,7 @@ export const Number = () => {
         viewBox='0 0 75 135'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
-        className={`${styles["nine"]} ${styles["default"]} ${styles.segment}`}
+        className={`${numberToShow} ${styles["default"]} ${styles.digit}`}
       >
         {/* A / 1 */}
         <path d='M17.269 14.8295H57.5517L71.4885 1.59469C70.1985 0.597611 68.5846 3.8147e-06 66.8301 3.8147e-06H7.63794C5.89411 3.8147e-06 4.29303 0.589093 3.00726 1.57233L17.269 14.8295Z' />

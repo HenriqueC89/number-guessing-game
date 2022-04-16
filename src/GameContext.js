@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 
-export const GameContext = React.createContext();
+export const GameContext = createContext();
 
 export const GameStorage = ({ children }) => {
-  const [data, setData] = React.useState(null);
+  const [gameInfos, setGameInfos] = useState({
+    answer: null,
+    displayArray: [10, 10, 10],
+    guess: "",
+    status: "default",
+  });
   return (
-    <GameContext.Provider value={{ data, setData }}>
+    <GameContext.Provider value={{ gameInfos, setGameInfos }}>
       {children}
     </GameContext.Provider>
   );

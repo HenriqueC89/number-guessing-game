@@ -5,10 +5,12 @@ import { GameStorage } from "./GameContext";
 
 function App() {
   return (
-    <GameStorage>
+    <>
       <Heading />
-      <Game />
-    </GameStorage>
+      <GameStorage>
+        <Game />
+      </GameStorage>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { GameContext } from "../../GameContext";
 import styles from "./Digit.module.css";
 const numberInWords = [
   "zero",
@@ -11,6 +12,7 @@ const numberInWords = [
   "seven",
   "eight",
   "nine",
+  null,
 ];
 /*
   A
@@ -26,8 +28,12 @@ C   E
 */
 export const Digit = ({ digit, gameStatus }) => {
   const [numberToShow, setNumberToShow] = useState(null);
-  useEffect(() => {}, []);
-  let hide = true ? styles[numberInWords[digit]] : null;
+  const { gameInfos } = useContext(GameContext);
+  useEffect(() => {
+    setNumberToShow(
+      gameInfos.guess ? styles[numberInWords[digit]] : styles[numberInWords[10]]
+    );
+  }, [numberToShow, gameInfos, setNumberToShow, digit]);
   return (
     <>
       <svg
@@ -36,7 +42,9 @@ export const Digit = ({ digit, gameStatus }) => {
         viewBox='0 0 75 135'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
-        className={`${numberToShow} ${styles["default"]} ${styles.digit}`}
+        className={`${numberToShow} ${styles[gameInfos.status]} ${
+          styles.digit
+        }`}
       >
         {/* A / 1 */}
         <path d='M17.269 14.8295H57.5517L71.4885 1.59469C70.1985 0.597611 68.5846 3.8147e-06 66.8301 3.8147e-06H7.63794C5.89411 3.8147e-06 4.29303 0.589093 3.00726 1.57233L17.269 14.8295Z' />

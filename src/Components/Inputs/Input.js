@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { INPUT_MIN, INPUT_MAX } from "../../Utils/constants";
+import { GameContext } from "../../GameContext";
 import styles from "./Input.module.css";
 
-const Input = () => {
-  const [guess, setGuess] = useState("");
-  const handleChange = (event) => {
-    let { value, min, max } = event.target;
-    value = value.length
-      ? Math.max(Number(min), Math.min(Number(max), Number(value)))
-      : "";
-    setGuess(value);
-  };
+const Input = ({ handleChange, guessInput }) => {
+  const { gameInfos, setGameInfos } = useContext(GameContext);
+
   return (
     <input
       className={styles.input}
@@ -19,9 +14,10 @@ const Input = () => {
       id='guessInput'
       placeholder='Digite o palpite'
       onChange={handleChange}
-      value={guess}
+      value={guessInput}
       min={INPUT_MIN}
       max={INPUT_MAX}
+      disabled={gameInfos.status !== "default"}
     />
   );
 };

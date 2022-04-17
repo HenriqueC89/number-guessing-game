@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
+import { GameContext } from "../../GameContext";
 import GuessButton from "./GuessButton";
 import Input from "./Input";
-import { GameContext } from "../../GameContext";
 import RetryButton from "./RetryButton";
+import styles from "./Inputs.module.css";
 
 const Inputs = () => {
-  const { gameInfos, setGameInfos, fetchRandomNumber } =
-    useContext(GameContext);
+  const { gameInfos, setGameInfos, fetchRandomNumber } = useContext(
+    GameContext
+  );
   const [guessInput, setGuessInput] = useState("");
 
   const handleChange = (event) => {
@@ -30,16 +32,21 @@ const Inputs = () => {
     fetchRandomNumber();
   };
   return (
-    <div>
-      <div>
+    <div className={styles.inputsContainer}>
+      <div className={styles.retryButton}>
         {gameInfos.status !== "default" && (
           <RetryButton handleRetryClick={handleRetryClick} />
         )}
       </div>
-      <Input handleChange={handleChange} guessInput={guessInput} />
+      <Input
+        handleChange={handleChange}
+        guessInput={guessInput}
+        className={styles.guessInput}
+      />
       <GuessButton
         handleGuessClick={handleGuessClick}
         guessInput={guessInput}
+        className={styles.guessButton}
       />
     </div>
   );

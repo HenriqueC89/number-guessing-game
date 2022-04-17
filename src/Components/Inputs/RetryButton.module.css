@@ -1,0 +1,29 @@
+.button {
+  width: 130px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    var(--color-grey-darkest) 0%,
+    var(--color-grey-dark) 100%
+  );
+  border-radius: 4px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.text {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-left: 4px;
+  font-family: var(--type-first);
+}
+
+.icon {
+  color: var(--color-white);
+}

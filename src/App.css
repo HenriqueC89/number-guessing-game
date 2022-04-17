@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 
+html {
+  height: 100%;
+  background: linear-gradient(180deg, #eeeeee 0%, #ffffff 100%);
+}
+
 body {
   /* FONTS */
   --type-first: Roboto, sans-serif;
@@ -7,7 +12,10 @@ body {
   font-family: var(--type-first);
 
   /* COLORS */
+  --color-orange-opaque: #c0661c;
   --color-orange: #ff6600;
+  --color-orange-dark: #ef6c00;
+  --color-orange-darkest: #db6300;
   --color-grey-light: #cfcfcf;
   --color-grey-dark: #9e9e9e;
   --color-grey-darkest: #434845;
@@ -16,4 +24,9 @@ body {
   --color-blue-darkest: #262a34;
   --color-success: #32bf00;
   --color-error: #cc3300;
+}
+
+button,
+input {
+  font-family: var(--type-first);
 }

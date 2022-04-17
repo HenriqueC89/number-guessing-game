@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Inputs from "../Inputs/Inputs";
 import Numbers from "../Numbers/Numbers";
 import { GameContext } from "../../GameContext";

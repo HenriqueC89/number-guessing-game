@@ -3,4 +3,5 @@
   flex-direction: row;
   place-content: center;
   margin-top: 32px;
+  min-height: 155px;
 }

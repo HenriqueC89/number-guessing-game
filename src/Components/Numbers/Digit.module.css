@@ -3,7 +3,7 @@
 }
 
 .digit > path {
-  fill: var(--color-grey-light);
+  fill: var(--color-grey);
 }
 
 .one.default > path:nth-child(3),

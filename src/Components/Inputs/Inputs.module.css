@@ -5,6 +5,8 @@
 .retryButton {
   min-height: 42px;
   margin-bottom: 75px;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 1024px) {

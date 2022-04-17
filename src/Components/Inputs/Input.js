@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { INPUT_MIN, INPUT_MAX } from "../../Utils/constants";
+import { INPUT_MIN, INPUT_MAX, TEXT } from "../../Utils/constants";
 import { GameContext } from "../../GameContext";
 import styles from "./Input.module.css";
 
 const Input = ({ handleChange, guessInput }) => {
-  const { gameInfos, setGameInfos } = useContext(GameContext);
+  const { gameInfos } = useContext(GameContext);
 
   return (
     <input
@@ -12,7 +12,7 @@ const Input = ({ handleChange, guessInput }) => {
       type='number'
       name='guessInput'
       id='guessInput'
-      placeholder='Digite o palpite'
+      placeholder={TEXT.GUESS_INPUT_PLACEHOLDER_TEXT}
       onChange={handleChange}
       value={guessInput}
       min={INPUT_MIN}

@@ -1,0 +1,19 @@
+.text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: var(--type-second);
+  margin: 0;
+}
+
+.error {
+  color: var(--color-error);
+}
+
+.victory {
+  color: var(--color-success);
+}
+
+.default {
+  color: var(--color-orange);
+}

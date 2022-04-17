@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
-import Button from "./Button";
+import GuessButton from "./GuessButton";
 import Input from "./Input";
 import { GameContext } from "../../GameContext";
+import RetryButton from "./RetryButton";
 
 const Inputs = () => {
-  //botar logica do onchange aqui, apenas mudar o guess quando clicar no button
-  const { gameInfos, setGameInfos } = useContext(GameContext);
+  const { gameInfos, setGameInfos, fetchRandomNumber } =
+    useContext(GameContext);
   const [guessInput, setGuessInput] = useState("");
 
   const handleChange = (event) => {
@@ -24,10 +25,22 @@ const Inputs = () => {
     }
     setGameInfos((prevGameInfos) => ({ ...prevGameInfos, ...newStatus }));
   };
+
+  const handleRetryClick = () => {
+    fetchRandomNumber();
+  };
   return (
     <div>
+      <div>
+        {gameInfos.status !== "default" && (
+          <RetryButton handleRetryClick={handleRetryClick} />
+        )}
+      </div>
       <Input handleChange={handleChange} guessInput={guessInput} />
-      <Button handleGuessClick={handleGuessClick} guessInput={guessInput} />
+      <GuessButton
+        handleGuessClick={handleGuessClick}
+        guessInput={guessInput}
+      />
     </div>
   );
 };

@@ -31,7 +31,9 @@ export const Digit = ({ digit, gameStatus }) => {
   const { gameInfos } = useContext(GameContext);
   useEffect(() => {
     setNumberToShow(
-      gameInfos.guess ? styles[numberInWords[digit]] : styles[numberInWords[10]]
+      gameInfos.guess || (gameInfos.status === "error" && gameInfos.answer)
+        ? styles[numberInWords[digit]]
+        : styles[numberInWords[10]]
     );
   }, [numberToShow, gameInfos, setNumberToShow, digit]);
   return (

@@ -16,3 +16,9 @@ Digitar no terminal os seguintes comandos:
 
 1. `npm install`
 2. `npm run start`
+
+## Possíveis melhorias futuras
+
+- Implementação de testes com jest e react testing library
+- Configuração de bundler
+- Migrar lógica em componentes para custom hooks

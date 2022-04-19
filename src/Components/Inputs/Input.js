@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { INPUT_MIN, INPUT_MAX, TEXT } from "../../Utils/constants";
+import { INPUT_MIN, INPUT_MAX, TEXT, GAME_STATUS } from "../../Utils/constants";
 import { GameContext } from "../../GameContext";
 import styles from "./Input.module.css";
 
@@ -17,7 +17,7 @@ const Input = ({ handleChange, guessInput }) => {
       value={guessInput}
       min={INPUT_MIN}
       max={INPUT_MAX}
-      disabled={gameInfos.status !== "default"}
+      disabled={gameInfos.status !== GAME_STATUS.DEFAULT}
     />
   );
 };

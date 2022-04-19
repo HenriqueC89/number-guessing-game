@@ -1,13 +1,14 @@
 import React, { useState, createContext } from "react";
 import { GET_RANDOM_NUMBER } from "./Api";
 import useFetch from "./Hooks/useFetch";
+import { GAME_STATUS } from "./Utils/constants";
 
 const setInitialArray = (num) => Array.from(num.toString()).fill(10);
 const initialGameState = {
   answer: null,
   displayArray: [10, 10, 10],
   guess: "",
-  status: "default",
+  status: GAME_STATUS.DEFAULT,
 };
 export const GameContext = createContext();
 
@@ -23,7 +24,7 @@ export const GameStorage = ({ children }) => {
     let newInfos = {
       answer: answer,
       displayArray: setInitialArray(answer),
-      status: json.Error ? "error" : "default",
+      status: json.Error ? GAME_STATUS.ERROR : GAME_STATUS.DEFAULT,
     };
     setGameInfos((prevGameInfos) => ({ ...prevGameInfos, ...newInfos }));
   }

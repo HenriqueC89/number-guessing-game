@@ -4,6 +4,7 @@ import GuessButton from "./GuessButton";
 import Input from "./Input";
 import RetryButton from "./RetryButton";
 import styles from "./Inputs.module.css";
+import { GAME_STATUS } from "../../Utils/constants";
 
 const Inputs = () => {
   const { gameInfos, setGameInfos, fetchRandomNumber } = useContext(
@@ -23,18 +24,20 @@ const Inputs = () => {
     setGameInfos((prevGameInfos) => ({ ...prevGameInfos, guess: guessInput }));
     let newStatus = {};
     if (gameInfos.answer === guessInput) {
-      newStatus.status = "victory";
+      newStatus.status = GAME_STATUS.VICTORY;
     }
+    setGuessInput("");
     setGameInfos((prevGameInfos) => ({ ...prevGameInfos, ...newStatus }));
   };
 
   const handleRetryClick = () => {
     fetchRandomNumber();
   };
+
   return (
     <div className={styles.inputsContainer}>
       <div className={styles.retryButton}>
-        {gameInfos.status !== "default" && (
+        {gameInfos.status !== GAME_STATUS.DEFAULT && (
           <RetryButton handleRetryClick={handleRetryClick} />
         )}
       </div>

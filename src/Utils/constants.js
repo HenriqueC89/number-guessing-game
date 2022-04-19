@@ -9,4 +9,11 @@ export const TEXT = {
   RETRY_BUTTON: "NOVA PARTIDA",
   GUESS_BUTTON: "ENVIAR",
   GUESS_INPUT_PLACEHOLDER_TEXT: "Digite o palpite",
+  HEADING_TITLE: "QUAL É O NÚMERO?",
+};
+
+export const GAME_STATUS = {
+  VICTORY: "victory",
+  ERROR: "error",
+  DEFAULT: "default",
 };

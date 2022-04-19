@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Digit } from "./Digit";
 import { GameContext } from "../../GameContext";
 import styles from "./Numbers.module.css";
+import { GAME_STATUS } from "../../Utils/constants";
 
 const convertNumberIntoArray = (num) => Array.from(num.toString()).map(Number);
 
@@ -10,7 +11,7 @@ const Numbers = () => {
   const [numberArray, setNumberArray] = useState();
   useEffect(() => {
     function handleArrayToDisplay() {
-      if (gameInfos.status === "error")
+      if (gameInfos.status === GAME_STATUS.ERROR)
         return convertNumberIntoArray(gameInfos.answer);
       else if (gameInfos.guess) return convertNumberIntoArray(gameInfos.guess);
       else return gameInfos.displayArray;

@@ -9,3 +9,10 @@ Este projeto foi inicializado com [Create React App](https://github.com/facebook
 - [React](https://pt-br.reactjs.org/)
 - [Context API](https://pt-br.reactjs.org/docs/context.html)
 - [CSS Modules](https://github.com/css-modules/css-modules)
+
+## Passos para executar a aplicação
+
+Digitar no terminal os seguintes comandos:
+
+1. `npm install`
+2. `npm run start`
